@@ -7,9 +7,26 @@
 </head>
 <body>
     <h1>Welcome...</h1>
-    <form>
-        <input id="pass"/>
-        <button id="btnLogin">Login</button>
-    </form>
+    <p id="txtTest"></p>
+    <input id="pass"/>
+    <button onclick="updateTxt()" id="btnLogin">Login</button>
+    
+    <script>
+        //const btnLogin = document.getElementById("btnLogin");
+        //btnLogin.addEventListener("click",function(){
+        
+        //let txtTest = document.getElementById("txtTest");
+        //txtTest.innerText = "login clicked";
+
+        
+        function updateTxt() {
+            console.log("Login button clicked")
+            //txtTest = document.getElementById("txtTest");
+            //txtTest.innerHTML = "trying to login"
+            document.getElementById("txtTest").innerHTML ="login clicked";
+        };
+        
+    </script>
+    
 </body>
 </html>
