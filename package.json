@@ -1,0 +1,12 @@
+{
+  "name": "todoweb",
+  "version": "0.01.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
