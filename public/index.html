@@ -8,29 +8,32 @@
 <body>
     <h1>Welcome...</h1>
     <p id="txtTest">Todo list</p>
-    <form>
-        <a>Headline:  </a><input id="headline"/>
-        <a>Description:  </a><input id="description"/>
+    <button onclick="showNewTodoForm()">Create new Todo</button>
+    <br>
+    <div id="newTodo" style="display:none">
         <br>
-        <br>
-        <button  id="btnCreate">Create Todo</button>
-    </form>
-    <!--
+        <form action="" method="GET" onsubmit="formValidation(event)" >
+            <a>Headline:  </a><input name="headline"/>
+            <a>Description:  </a><input name="description"/>
+            <br>
+            <br>
+            <input 
+                type="submit"
+                value="Submit">
+        </form>
+    </div>
     <script>
-        const btnLogin = document.getElementById("btnLogin");
-        btnLogin.addEventListener("click",function(){
-            txtTest = document.getElementById("txtTest");
-            txtTest.innerText = "login clicked";
-
-        });
+        function showNewTodoForm(){
+            console.log("showing new todo form.. ");
+            var newTodoForm = document.getElementById("newTodo");
+            newTodoForm.style.display = "block"; 
+        }
         
-        function updateTxt() {
-            console.log("Login button clicked")
-            document.getElementById("txtTest").innerHTML = "login clicked";
-        };
-        
+        function formValidation(e){
+            e.preventDefault(); //TODO Når den har opdateret event rigtig, så skal den skjules. 
+            var todoHL = e.headline.value;
+            console.log("Headline is : " + todoHL);
+        }
     </script>
-    -->
-
 </body>
 </html>
