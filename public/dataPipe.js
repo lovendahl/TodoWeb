@@ -1,4 +1,4 @@
-function newTodo(){
+function updateNewTodo(){
     console.log("New todo created... Sending request to backend.")
     console.log("...not implemented yet");
 }

@@ -14,8 +14,8 @@
     <div id="newTodo" style="display:none">
         <br>
         <form action="" method="GET" onsubmit="formValidation(event)" >
-            <a>Headline:  </a><input name="headline"/>
-            <a>Description:  </a><input name="description"/>
+            <a>Headline:  </a><input id="headline"/>
+            <a>Description:  </a><input id="description"/>
             <br>
             <br>
             <input 
@@ -35,7 +35,7 @@
             const headline = document.getElementById("headline");
             var todoHL = headline.value;
             console.log("Headline is : " + todoHL);
-            newTodo();
+            updateNewTodo();
         }
     </script>
 </body>
