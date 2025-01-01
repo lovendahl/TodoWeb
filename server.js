@@ -8,7 +8,3 @@ app.listen(port,() =>{
     console.log('Server started. Listening on port ' + port);
 })
 
-
-app.post('/',(request,response) => {
-    console.log("showing main page");
-});
