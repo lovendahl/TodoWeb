@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="dataPipe.js" type="module"></script>
     <title>Welcome to Todo website</title>
 </head>
 <body>
@@ -31,8 +32,9 @@
         
         function formValidation(e){
             e.preventDefault(); //TODO Når den har opdateret event rigtig, så skal den skjules. 
-            var todoHL = e.headline.value;
+            var todoHL = headline.value;
             console.log("Headline is : " + todoHL);
+            newTodo();
         }
     </script>
 </body>
