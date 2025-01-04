@@ -3,7 +3,7 @@
   "version": "0.01.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "cls && jest"
   },
   "keywords": [],
   "author": "",
