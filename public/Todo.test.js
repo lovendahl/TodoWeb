@@ -43,6 +43,16 @@ test("test print of creation date", () => {
   );
 });
 
+test("testing status of todos", () => {
+  var tmpTodo = new t.Todo("hl");
+  expect(tmpTodo.status).toBe(t.Todo.Status.notStarted.description);
+  tmpTodo.status = t.Todo.Status.inProcess;
+  expect(tmpTodo.status).toBe(t.Todo.Status.inProcess.description);
+  tmpTodo.status = t.Todo.Status.finished;
+  expect(tmpTodo.status).toBe(t.Todo.Status.finished.description);
+});
+
+//Helper functions.
 function randomString(length) {
   let result = " ";
   const characters =
