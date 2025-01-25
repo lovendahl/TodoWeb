@@ -1,6 +1,9 @@
 class Todo {
   //TODO get set for description.
   //TODO get set for status
+  //TODO Create a enmun with finished.
+  //TODO Set new todo in controctor to noStarted
+  //TODO create get and set for headline, desc. creationDate and finished.
 
   #headline;
   #creationDate;
@@ -14,23 +17,21 @@ class Todo {
   get Headline() {
     return this.#headline;
   }
-
   set Headline(headline) {
     this.#headline = headline;
   }
-  setDescription(description) {
-    this.#description = description;
-  }
 
-  getDescription() {
+  get Description() {
     return this.#description;
+  }
+  set Description(description) {
+    this.#description = description;
   }
 
   get creationEpoc() {
     return this.#creationDate.getTime();
   }
-
-  getCreationDate_ToString() {
+  get Creation_ToString() {
     const options = {
       day: "2-digit",
       month: "2-digit",
@@ -41,13 +42,6 @@ class Todo {
     };
     return this.#creationDate.toLocaleString("en-GB", options);
   }
-  // return new Proxy(this, {
-  //   get: (_, prop) => this[prop],
-  //   set: (_, prop, value) => {
-  //     if (!(prop in this)) throw new Error('Prop does not exist!');
-  //     this[prop] = value;
-  //   }
-  // });
 }
 
 class Status {
@@ -61,7 +55,3 @@ class Status {
 module.exports = {
   Todo,
 };
-
-//TODO Create a enmun with finished.
-//TODO Set new todo in controctor to noStarted
-//TODO create get and set for headline, desc. creationDate and finished.
