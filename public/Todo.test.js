@@ -7,7 +7,7 @@ test("test todo class creatin", () => {
 
 test("test todo class with description", () => {
   var tmpTodo = new t.Todo("hl");
-  tmpTodo.description = "desc"; //TODO det skal være en get /set i stedet.
+  tmpTodo.description = "desc";
   expect(tmpTodo.headline).toBe("hl");
   expect(tmpTodo.description).toBe("desc");
 });
@@ -17,11 +17,14 @@ test("test creation date", () => {
   expect(tmpTodo.creationEpoc).toBeLessThan(Date.now() + 1);
 });
 
-test("getSetHeadline ", () => {
+test("Test getSetHeadline with random text", () => {
   var tmp = new t.Todo("headline");
-  var headline = "myheadline";
-  tmp.Headline = headline;
-  expect(tmp.Headline).toBe(headline);
+  var tmpHl = randomString(10);
+  var tmpDesc = randomString(20);
+  tmp.Headline = tmpHl;
+  tmp.Description = tmpDesc;
+  expect(tmp.Headline).toBe(tmpHl);
+  expect(tmp.Description).toBe(tmpDesc);
 });
 
 test("test print of creation date", () => {
@@ -35,8 +38,19 @@ test("test print of creation date", () => {
     minute: "2-digit",
     second: "2-digit",
   };
-  var d = new Date();
-  expect(tmpTodo.getCreationDate_ToString()).toBe(
+  expect(tmpTodo.Creation_ToString).toBe(
     checkDate.toLocaleString("en-GB", options)
   );
 });
+
+function randomString(length) {
+  let result = " ";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const charactersLength = characters.length;
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+
+  return result;
+}
