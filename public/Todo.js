@@ -1,9 +1,4 @@
 class Todo {
-  //TODO get set for status
-  //TODO Create a enmun with finished.
-  //TODO Set new todo in controctor to noStarted
-  //TODO create get and set for headline, desc. creationDate and finished.
-
   #headline;
   #creationDate;
   #description;
@@ -68,9 +63,3 @@ class Todo {
 module.exports = {
   Todo,
 };
-
-// const Status = {
-//   notStarted: Symbol("not Started"),
-//   inProcess: Symbol("in Process"),
-//   finished: Symbol("finished"),
-// };
