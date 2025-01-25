@@ -20,7 +20,6 @@ function createAndSetupDatabase(userID) {
     try {
       // Create user folder if it does not exist.
       if (!fs.existsSync(path.join(dataDir, userID))) {
-        console.log("Creating dir" + path.join(dataDir, userID));
         fs.mkdirSync(path.join(dataDir, userID));
       }
 
@@ -29,8 +28,6 @@ function createAndSetupDatabase(userID) {
         if (err) {
           console.error("Error opening database:", err.message);
           reject(err);
-        } else {
-          console.log("Database open");
         }
       });
 
@@ -39,7 +36,6 @@ function createAndSetupDatabase(userID) {
         "CREATE TABLE IF NOT EXISTS todo (id INTEGER PRIMARY KEY, headline TEXT, description TEXT, finished INTEGER, created TEXT)";
       executeSql(db, sql)
         .then((response) => {
-          console.log("Sql .." + response);
           resolve();
         })
         .catch((err) => {
@@ -54,7 +50,6 @@ function createAndSetupDatabase(userID) {
 }
 
 function deleteUser(userID) {
-  console.log("Trying to delete user " + userID);
   try {
     fs.rm(path.join(dataDir, userID), { recursive: true }, (err) => {
       if (err) {
@@ -84,7 +79,6 @@ function getDatabaseFullPath(userID) {
 async function executeSql(db, sql) {
   return new Promise((resolve, reject) => {
     db.exec(sql, (err) => {
-      console.log("Executing sql: " + sql);
       if (err) reject(err);
       resolve("success");
       db.close();
