@@ -3,7 +3,8 @@
   "version": "0.01.0",
   "main": "index.js",
   "scripts": {
-    "test": "cls && jest"
+    "test": "cls && jest",
+    "single": "cls && node --trace-uncaught runSingle.js "
   },
   "keywords": [],
   "author": "",

@@ -1,4 +1,5 @@
 const t = require("./Todo.js");
+const tHlp = require("../testHelpers.js");
 
 test("test todo class creatin", () => {
   var tmpTodo = new t.Todo("hl");
@@ -19,8 +20,8 @@ test("test creation date", () => {
 
 test("Test getSetHeadline with random text", () => {
   var tmp = new t.Todo("headline");
-  var tmpHl = randomString(10);
-  var tmpDesc = randomString(20);
+  var tmpHl = tHlp.randomString(10);
+  var tmpDesc = tHlp.randomString(20);
   tmp.Headline = tmpHl;
   tmp.Description = tmpDesc;
   expect(tmp.Headline).toBe(tmpHl);
@@ -52,15 +53,15 @@ test("testing status of todos", () => {
   expect(tmpTodo.status).toBe(t.Todo.Status.finished.description);
 });
 
-//Helper functions.
-function randomString(length) {
-  let result = " ";
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  const charactersLength = characters.length;
-  for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
+// //Helper functions.
+// function randomString(length) {
+//   let result = " ";
+//   const characters =
+//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//   const charactersLength = characters.length;
+//   for (let i = 0; i < length; i++) {
+//     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+//   }
 
-  return result;
-}
+//   return result;
+// }
